@@ -50,12 +50,12 @@
                         </ul>
 
                         </header>
-                        <div class="c-body">
-                        <main class="c-main">
+                            <div class="c-body">
+                                <main class="c-main">
 
- @yield('content')
-                        </main>
-                        </div>
+                                     @yield('content')
+                                </main>
+                            </div>
 
  <!-- Optional JavaScript -->
  <!-- Popper.js first, then CoreUI JS -->
