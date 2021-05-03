@@ -23,8 +23,8 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                <label for="name">{{ __('Nmae') }}</label>
-                                <input class="form-control" name="name" type="text" placeholder="{{ __('Checklist Group') }}">
+                                <label for="name">{{ __('Name') }}</label>
+                                <input class="form-control" value="{{ old('name') }}" name="name" type="text" placeholder="{{ __('Checklist Group') }}">
                                 </div>
                             </div>
                         </div>
