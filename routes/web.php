@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use App\Http\Middleware\IsAdmin;
 
 /*
@@ -22,11 +23,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware'=>'auth'],function() {
+    Route::get('welcome',[PageController::class,'welcome'])->name('welcome');
+    Route::get('consultation',[PageController::class,'consultation'])->name('consultation');
+
     Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>'is_admin'],function() {
-      Route::resource( 'pages',App\Http\Controllers\Admin\PageController::class);
+      Route::resource( 'pages',App\Http\Controllers\Admin\PageController::class)
+      ->only(['edit','update']);
       Route::resource( 'checklist_groups',App\Http\Controllers\Admin\ChecklistGroupController::class);
       Route::resource( 'checklist_groups.checklists',App\Http\Controllers\Admin\ChecklistController::class);
       Route::resource( 'checklists.tasks',App\Http\Controllers\Admin\TaskController::class);

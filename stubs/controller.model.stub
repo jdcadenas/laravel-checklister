@@ -31,12 +31,12 @@ class {{ class }} extends Controller
 
     public function show({{ model }} ${{ modelVariable }}): View
     {
-         return view('{{ modelVariable }}s.show', compact('{{ modelVariable }}s'));
+         return view('{{ modelVariable }}s.show', compact('{{ modelVariable }}'));
     }
 
     public function edit({{ model }} ${{ modelVariable }}): View
     {
-        return view('{{ modelVariable }}s.edit', compact('{{ modelVariable }}s'));
+        return view('{{ modelVariable }}s.edit', compact('{{ modelVariable }}'));
     }
 
     public function update(Request $request, {{ model }} ${{ modelVariable }}): RedirectResponse

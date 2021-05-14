@@ -6,6 +6,7 @@ use App\Models\ChecklistGroup;
 use Illuminate\Contracts\View\View;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreChecklistGroupRequest;
+use App\Http\Requests\UpdateChecklistGroupRequest;
 use Illuminate\Http\RedirectResponse;
 
 class ChecklistGroupController extends Controller
@@ -28,7 +29,7 @@ class ChecklistGroupController extends Controller
         return view('admin.checklist_groups.edit', compact('checklistGroup'));
     }
 
-    public function update(StoreChecklistGroupRequest $request, ChecklistGroup $checklistGroup): RedirectResponse
+    public function update(UpdateChecklistGroupRequest $request, ChecklistGroup $checklistGroup): RedirectResponse
     {
         $validated = $request->validated();
         $checklistGroup->update($validated);
